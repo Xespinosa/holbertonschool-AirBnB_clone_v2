@@ -1,13 +1,17 @@
 #!/usr/bin/python3
+"""Script that start a Flask webapp"""
+
+
 from flask import Flask
+
 
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hello_hbnb():
-    """prompt for the HBNB"""
-    return 'Hello HBNB!'
+def hell():
+    """function to return a string"""
+    return "Hello HBNB!"
 
 
 if __name__ == '__main__':

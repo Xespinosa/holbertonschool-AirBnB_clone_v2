@@ -1,32 +1,38 @@
 #!/usr/bin/python3
+"""Script that start a Flask webapp"""
+
+
 from flask import Flask
+
 
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hello():
-    """prompt for the HBNB"""
-    return 'Hello HBNB!'
+def hell():
+    """function to return a string"""
+    return "Hello HBNB!"
 
 
 @app.route('/hbnb', strict_slashes=False)
 def hello_hbnb():
-    """prompt for the HBNB"""
-    return 'HBNB'
+    """prints hbnb"""
+    return "HBNB"
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def c_cool():
-    """variable text"""
-    text = text.replace('_', "")
-    return f"C {text}"
+def c_is_fun(text):
+    """"replace _ with spaces"""
+    text = text.replace('_', ' ')
+    return f"c {text}"
 
 
-@app.route('/python/<text>', strict_slashes=False, default='is cool')
-def python_cool():
-    """python variable text"""
-    text = text.replace('_', "")
+@app.route('/python/', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
+def python(text="is_cool"):
+    """print is cool"""
+    if text is not 'is cool':
+        text = text.replace('_', ' ')
     return f"Python {text}"
 
 
